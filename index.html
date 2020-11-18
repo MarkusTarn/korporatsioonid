@@ -101,7 +101,7 @@
 			M.Autocomplete.init(id('autocomplete-female'), {
 				data: mapSearchData(femaleCorp),
 				onAutocomplete: (filter) => fillCorpList(filterSearchData(femaleCorp, filter), 'female-container')
-			});
+			})
 			id('autocomplete-female').addEventListener('keyup', (e) => finishSearch(e, femaleCorp, 'female-container'))
 
 			/* Initialise test tab */
@@ -115,11 +115,12 @@
 			/* Initialise test tab FAB */
 			id('next-test').onclick = nextTest
 			M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'))
-			M.Tabs.init(id('tabs'), { swipeable: true })
+			M.AutoInit()
+			// M.Tabs.init(id('tabs'), { swipeable: true })
 		}
 
-		if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
-		else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun);
+		if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
+		else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun)
 		else window.onload = autorun
 	</script>
 </body>

@@ -31,21 +31,20 @@
 }
 
 .top {
-	height: 18px;
-	border-radius: 120px 120px 0 0;
+	height: 24px;
 	border-top: 1px solid black;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 }
 
 .middle {
-	height: 18px;
+	height: 24px;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 }
 
 .bottom {
-	height: 18px;
+	height: 24px;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;

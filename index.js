@@ -3,8 +3,8 @@ const id = (id) => document.getElementById(id)
 const toggleVisible = (event) => {
 	const [tabId, name] = event.target.parentElement.id.split('-')
 	const content = id(`${tabId}-${name}-content`)
-	if (content.classList.contains('hide')) content.classList.remove('hide');
-	else content.classList.add('hide');
+	if (content.classList.contains('hide')) content.classList.remove('hide')
+	else content.classList.add('hide')
 	event.target.innerHTML = event.target.innerHTML === 'visibility' ? 'visibility_off' : 'visibility'
 }
 

@@ -91,7 +91,7 @@ data = [
 		"founded": "11/26/1900",
 		"palette": {
 			"text": "violetne-must-valge",
-			"top": "purple lighten-1",
+			"top": "purple",
 			"middle": "black",
 			"bottom": "white"
 		},
@@ -109,9 +109,9 @@ data = [
 		"founded": "05/09/1907",
 		"palette": {
 			"text": "sinine-roheline-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "blue darken-3",
+			"middle": "green darken-3",
+			"bottom": "white"
 		},
 		"motto": "Teos õiglane ja vahvas, ustav sulle, eesti rahvas",
 		"tartu": "Vanemuise 54",
@@ -127,9 +127,9 @@ data = [
 		"founded": "11/14/1909",
 		"palette": {
 			"text": "sinine-violetne-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "indigo",
+			"middle": "purple",
+			"bottom": "white"
 		},
 		"motto": "Üks kõigi eest, kõik ühe eest",
 		"tartu": "Veski 69",
@@ -145,9 +145,9 @@ data = [
 		"founded": "10/30/1913",
 		"palette": {
 			"text": "must-sinine-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "black",
+			"middle": "blue darken-3",
+			"bottom": "white"
 		},
 		"motto": "Isamaa, sõprus, ausus!",
 		"tartu": "Kuperjanovi 16",
@@ -162,9 +162,9 @@ data = [
 		"founded": "11/10/1913",
 		"palette": {
 			"text": "sinine-must-roheline",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "blue darken-3",
+			"middle": "black",
+			"bottom": "green darken-3"
 		},
 		"motto": "Eestimaa, mu isamaa",
 		"tartu": "Tähe 3",
@@ -180,9 +180,9 @@ data = [
 		"founded": "01/28/1918",
 		"palette": {
 			"text": "violtne-roheline-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "purple darken-3",
+			"middle": "teal darken-2",
+			"bottom": "white"
 		},
 		"motto": "Vendlus, ausus, hoolsus!",
 		"tartu": "Jakobi 52",
@@ -198,9 +198,9 @@ data = [
 		"founded": "10/16/1920",
 		"palette": {
 			"text": "violetne-kollane-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "purple darken-3",
+			"middle": "yellow",
+			"bottom": "white"
 		},
 		"motto": "Age quod agis",
 		"tallinn": "Tatari 12",
@@ -215,9 +215,9 @@ data = [
 		"founded": "12/03/1920",
 		"palette": {
 			"text": "roheline-must-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "green darken-3",
+			"middle": "black",
+			"bottom": "white"
 		},
 		"motto": "Üks kõige – kõik ühe eest",
 		"tartu": "Veski 45",
@@ -233,9 +233,9 @@ data = [
 		"founded": "10/23/1921",
 		"palette": {
 			"text": "must-roheline-valge",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "black",
+			"middle": "green darken-3",
+			"bottom": "white"
 		},
 		"motto": "Kindlus, ausus, vendlus!",
 		"tallinn": "Pikk 29a",
@@ -250,9 +250,9 @@ data = [
 		"founded": "03/27/1929",
 		"palette": {
 			"text": "roheline-valge-violetne",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "green darken-3",
+			"middle": "white",
+			"bottom": "purple darken-3"
 		},
 		"motto": "Pidevas töös, tõe valguses, elurõõmsalt tulevikku!",
 		"tartu": "Jaani 20",
@@ -268,9 +268,9 @@ data = [
 		"founded": "11/27/1859",
 		"palette": {
 			"text": "must-valge-vanakuldne",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "black",
+			"middle": "white",
+			"bottom": "yellow accent-4"
 		},
 		"motto": "Deus, Libertas, Patria!",
 		"tartu": "Õpetaja 11",
@@ -285,9 +285,9 @@ data = [
 		"founded": "11/07/1880",
 		"palette": {
 			"text": "kuldne-hall-punane",
-			"top": "white",
-			"middle": "pink lighten-1",
-			"bottom": "black"
+			"top": "yellow accent-4",
+			"middle": "grey darken-3",
+			"bottom": "red darken-3"
 		},
 		"motto": "P.C.T (Рцы слово твердо)",
 		"member": "",
