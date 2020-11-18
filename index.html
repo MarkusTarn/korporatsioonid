@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Korporatsioonid</title>
+
+	<meta name="description" content="Korporatsioonide nimekiri">
+	<meta name="author" content="Markus Tarn">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<ul id="tabs" class="tabs">
+		<li class="tab"><a class="active teal-text text-lighten-1" href="#all">Kõik korporatsioonid</a></li>
+		<li class="tab"><a class="teal-text text-lighten-1" href="#male">Mees korporatsioonid</a></li>
+		<li class="tab"><a class="teal-text text-lighten-1" href="#female">Nais korporatsioonid</a></li>
+		<li class="tab"><a class="teal-text text-lighten-1" href="#test">Test</a></li>
+	</ul>
+
+	<div class="row">
+		<div class="container">
+			<div id="all" class="col s12">
+				<div class="col s12 m8 l6 offset-m2 offset-l3">
+					<div class="row search-bar">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input type="text" id="autocomplete-all" class="autocomplete" name="autocomplete-all">
+							<label for="autocomplete-all">Otsingusõna</label>
+						</div>
+					</div>
+					<div id="all-container" class="row"></div>
+				</div>
+			</div>
+			<div id="male" class="col s12">
+				<div class="col s12 m8 l6 offset-m2 offset-l3">
+					<div class="row search-bar">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input type="text" id="autocomplete-male" class="autocomplete" name="autocomplete-male">
+							<label for="autocomplete-male">Otsingusõna</label>
+						</div>
+					</div>
+					<div id="male-container" class="row"></div>
+				</div>
+			</div>
+			<div id="female" class="col s12">
+				<div class="col s12 m8 l6 offset-m2 offset-l3">
+					<div class="row search-bar">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input type="text" id="autocomplete-female" class="autocomplete" name="autocomplete-female">
+							<label for="autocomplete-female">Otsingusõna</label>
+						</div>
+					</div>
+					<div id="female-container" class="row"></div>
+				</div>
+			</div>
+			<div id="test" class="col s12">
+				<div id="test-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
+				<div class="fixed-action-btn">
+					<a id="next-test" class="btn-floating btn-large waves-effect waves-light">
+						<i class="material-icons">arrow_forward_ios</i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script>
+		const autorun = async () => {
+			const maleCorp = data.filter(({ sex, corp }) => corp && sex === 'male')
+			const femaleCorp = data.filter(({ sex, corp }) => corp && sex === 'female')
+
+			/* Fill tabs */
+			fillCorpList([...maleCorp, ...femaleCorp], 'all-container')
+			fillCorpList(maleCorp, 'male-container')
+			fillCorpList(femaleCorp, 'female-container')
+
+
+			/* Initialise tabs */
+			M.Autocomplete.init(id('autocomplete-all'), {
+				data: mapSearchData([...maleCorp, ...femaleCorp]),
+				onAutocomplete: (filter) => fillCorpList(filterSearchData([...maleCorp, ...femaleCorp], filter), 'all-container')
+			})
+			id('autocomplete-all').addEventListener('keyup', (e) => finishSearch(e, [...maleCorp, ...femaleCorp], 'all-container'))
+
+			M.Autocomplete.init(id('autocomplete-male'), {
+				data: mapSearchData(maleCorp),
+				onAutocomplete: (filter) => fillCorpList(filterSearchData(maleCorp, filter), 'male-container')
+			})
+			id('autocomplete-male').addEventListener('keyup', (e) => finishSearch(e, maleCorp, 'male-container'))
+
+			M.Autocomplete.init(id('autocomplete-female'), {
+				data: mapSearchData(femaleCorp),
+				onAutocomplete: (filter) => fillCorpList(filterSearchData(femaleCorp, filter), 'female-container')
+			});
+			id('autocomplete-female').addEventListener('keyup', (e) => finishSearch(e, femaleCorp, 'female-container'))
+
+			/* Initialise test tab */
+			let testStack = [...maleCorp, ...femaleCorp]
+			const nextTest = () => {
+				getRandomCard(testStack)
+				if (testStack.length === 0) testStack = [...maleCorp, ...femaleCorp]
+			}
+			nextTest()
+
+			/* Initialise test tab FAB */
+			id('next-test').onclick = nextTest
+			M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'))
+			M.Tabs.init(id('tabs'), { swipeable: true })
+		}
+
+		if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false);
+		else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun);
+		else window.onload = autorun
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+.tabs {
+	margin-bottom: 20px;
+	color: #26a69a;
+}
+
+.tabs-content.carousel .carousel-item {
+	height: auto !important;
+}
+
+.tab {
+	color: #26a69a;
+}
+
+.search-bar {
+	margin: 0 30px 0 10px;
+}
+
+.card-title a {
+	margin-left: 20px;
+	color: black;
+}
+
+.card-title i {
+	color: #26a69a;
+}
+
+.hat {
+	margin: auto;
+	width: 65%;
+	margin: 40px auto;
+}
+
+.top {
+	height: 18px;
+	border-radius: 120px 120px 0 0;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.middle {
+	height: 18px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.bottom {
+	height: 18px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+li i {
+	vertical-align: text-bottom;
+}
+
+.test {
+	opacity: 1;
+}
+
+.test .hidden {
+	opacity: 0;
+}
