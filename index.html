@@ -119,8 +119,8 @@
 
 			/* Listen to space and enter keys for test */
 			document.body.onkeyup = (event) => {
-				if(event.keyCode === 32) document.querySelector('[id$="-toggle"] > i').click()
-				if(event.keyCode === 13 || event.keyCode === 13) document.querySelector('#next-test > i').click()
+				if(event.keyCode === 32 || event.key === 'VolumeDown') document.querySelector('[id$="-toggle"] > i').click()
+				if(event.keyCode === 13 || event.keyCode === 13 || event.key === 'VolumeUp') document.querySelector('#next-test > i').click()
 			}
 		}
 
