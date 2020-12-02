@@ -43,7 +43,7 @@ data = [
 			"middle": "green darken-3",
 			"bottom": "purple lighten-1"
 		},
-		"motto": "Constantia ad finem ducit",
+		"motto": "Constantia ad finem ducit (Püsivus viib sihile)",
 		"tallinn": "Kaarli pst 5-2",
 		"member": "lembelensa",
 		"sex": "female",
@@ -60,7 +60,7 @@ data = [
 			"middle": "green darken-4",
 			"bottom": "orange accent-1"
 		},
-		"motto": "Per aspera ad astra",
+		"motto": "Per aspera ad astra (Läbi raskuste tähtede poole)",
 		"tartu": "Kastani 65-2",
 		"member": "amica",
 		"sex": "female",
@@ -202,7 +202,7 @@ data = [
 			"middle": "yellow",
 			"bottom": "white"
 		},
-		"motto": "Age quod agis",
+		"motto": "Truudus, tublidus, ausus",
 		"tallinn": "Tatari 12",
 		"member": "leolensis",
 		"sex": "male",
@@ -272,7 +272,7 @@ data = [
 			"middle": "white",
 			"bottom": "yellow accent-4"
 		},
-		"motto": "Deus, Libertas, Patria!",
+		"motto": "Deus, Libertas, Patria! (Jumal, vabadus, isamaa!)",
 		"tartu": "Õpetaja 11",
 		"member": "arminus",
 		"sex": "male",
