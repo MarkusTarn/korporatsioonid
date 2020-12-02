@@ -63,7 +63,7 @@
 			<div id="test" class="col s12">
 				<div id="test-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
 				<div class="fixed-action-btn">
-					<a id="next-test" class="btn-floating btn-large waves-effect waves-light">
+					<a id="next-test" class="btn-floating btn-large waves-effect waves-light tooltipped" data-position="top" data-tooltip="Press enter">
 						<i class="material-icons">arrow_forward_ios</i>
 					</a>
 				</div>
@@ -116,7 +116,12 @@
 			id('next-test').onclick = nextTest
 			M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'))
 			M.AutoInit()
-			// M.Tabs.init(id('tabs'), { swipeable: true })
+
+			/* Listen to space and enter keys for test */
+			document.body.onkeyup = (event) => {
+				if(event.keyCode === 32) document.querySelector('[id$="-toggle"] > i').click()
+				if(event.keyCode === 13 || event.keyCode === 13) document.querySelector('#next-test > i').click()
+			}
 		}
 
 		if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
