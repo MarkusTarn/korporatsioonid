@@ -32,7 +32,7 @@ const generateCard = (corpData, tabId) => `
 	<div class="card">
 		<div class="card-content">
 			<span class="card-title">
-				${tabId === 'test' ? '<a id="' + tabId + '-' + corpData.slug + '-toggle" class="right waves-effect waves-circle waves-light tooltipped" href="#" data-position="top" data-tooltip="Press spacebar"><i class="small material-icons">visibility</i></a>' : ''}
+				${tabId === 'test' ? '<a id="' + tabId + '-' + corpData.slug + '-toggle" class="right waves-effect waves-circle waves-light tooltipped" href="#" data-position="left" data-tooltip="Press spacebar"><i class="small material-icons">visibility</i></a>' : ''}
 				${tabId === 'test' ? '' : '<a class="right" href="' + corpData.url + '" target="_blank"><i class="small material-icons">public</i></a>'}
 				${corpData.name}
 			</span>
