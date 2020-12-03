@@ -19,7 +19,7 @@ data = [
 	{
 		"slug": "indla",
 		"name": "Indla",
-		"founded": "04/07/1924",
+		"founded": "03/07/1924",
 		"palette": {
 			"text": "kirsipruun-valge-roheline",
 			"top": "red darken-4",
