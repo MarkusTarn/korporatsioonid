@@ -294,5 +294,126 @@ data = [
 		"sex": "male",
 		"url": "https://www.arctica.lv",
 		"corp": true
+	},
+	{
+		"slug": "eus",
+		"name": "Eesti Üliõpilaste Selts",
+		"founded": "04/07/1870",
+		"palette": {
+			"text": "sinine-must-valge",
+			"top": "blue",
+			"middle": "black",
+			"bottom": "white"
+		},
+		"motto": "Tugevalt asjaajamises, meeldival viisil",
+		"tartu": "Jaan Tõnissoni 1",
+		"tallinn": "Johann Köleri 13",
+		"member": "seltsivend",
+		"sex": "male",
+		"url": "http://www.eys.ee",
+		"corp": false
+	},
+	{
+		"slug": "pohjala",
+		"name": "EÜS Põhjala",
+		"founded": "11/13/1870",
+		"palette": {
+			"text": "-",
+			"top": "white",
+			"middle": "white",
+			"bottom": "black"
+		},
+		"motto": "Töö isamaa kasuks",
+		"tartu": "Jakobi 23",
+		"tallinn": "Roosikrantsi 8b",
+		"member": "põhjalane",
+		"sex": "uni",
+		"url": "http://www.põhjala.ee",
+		"corp": false
+	},
+	{
+		"slug": "liivika",
+		"name": "ÜS Liivika",
+		"founded": "4/21/1909",
+		"palette": {
+			"text": "-",
+			"top": "white",
+			"middle": "white",
+			"bottom": "black"
+		},
+		"motto": "Ex solo ad solem soli patriae",
+		"tartu": "K.E. von Baeri tn 7",
+		"member": "liiviklane",
+		"sex": "male",
+		"url": "https://liivika.ee",
+		"corp": false
+	},
+	{
+		"slug": "ens",
+		"name": "Eesti Naisüliõpilaste Selts",
+		"founded": "11/14/1911",
+		"palette": {
+			"text": "-",
+			"top": "white",
+			"middle": "white",
+			"bottom": "black"
+		},
+		"motto": "Demokraatia, rahvuslikkus, individuaalsus",
+		"tartu": "Riia 13-33",
+		"member": "-",
+		"sex": "female",
+		"url": "https://enys.ee",
+		"corp": false
+	},
+	{
+		"slug": "veljesto",
+		"name": "EYS Veljesto",
+		"founded": "02/24/1920",
+		"palette": {
+			"text": "-",
+			"top": "white",
+			"middle": "white",
+			"bottom": "black"
+		},
+		"motto": "Õige vaimsuse kaudu vendlusele, nende mõlema kaudu vabadusele!",
+		"tartu": "Gildi 3-10",
+		"member": "veljestolane",
+		"sex": "male",
+		"url": "https://www.arctica.lv",
+		"corp": false
+	},
+	{
+		"slug": "raimla",
+		"name": "ÜS Raimla",
+		"founded": "09/22/1922",
+		"palette": {
+			"text": "-",
+			"top": "white",
+			"middle": "white",
+			"bottom": "black"
+		},
+		"motto": "Demokraatia, isiksus, isamaa",
+		"tartu": "Veski 42",
+		"member": "raimlane",
+		"sex": "male",
+		"url": "https://raimla.ee",
+		"corp": false
+	},
+	{
+		"slug": "fraternitas_fennica",
+		"name": "ÜÜ Fraternitas Fennica",
+		"founded": "10/22/1926",
+		"palette": {
+			"text": "kuldne-must-valge",
+			"top": "orange accent-1",
+			"middle": "black",
+			"bottom": "white"
+		},
+		"motto": "-",
+		"tartu": "Jaani 4",
+		"member": "fennicus",
+		"sex": "uni",
+		"url": "http://ff.ee",
+		"corp": false
 	}
 ]
