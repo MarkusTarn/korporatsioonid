@@ -11,6 +11,18 @@
 	color: #26a69a;
 }
 
+.menu-button {
+  color: rgba(238,110,115,0.7);
+  cursor: pointer;
+  padding-top: 14px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .search-bar {
 	margin: 0 30px 0 10px;
 }
