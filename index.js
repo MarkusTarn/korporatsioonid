@@ -19,8 +19,8 @@ const filters = {
   filterSociety: ({ corp }) => corp,
   filterFemale: ({ sex }) => sex !== 'female',
   filterMale: ({ sex }) => sex !== 'male',
-  filterTartu: ({ tartu }) => !tartu,
-  filterTallinn: ({ tallinn }) => !tallinn,
+  filterTartu: ({ tallinn }) => tallinn,
+  filterTallinn: ({ tartu }) => tartu,
 }
 
 const filterData = (name, checked) => {
