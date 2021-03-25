@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ee">
+
+<head>
+  <meta charset="utf-8">
+  <title>Korporatsioonid</title>
+
+  <meta name="description" content="Korporatsioonide nimekiri">
+  <meta name="author" content="Markus Tarn">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="maps.css">
+</head>
+
+<body>
+  <!-- Lehed -->
+  <ul id="tabs" class="tabs">
+    <li class="tab disabled">
+      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+        <i class="material-icons menu-button">menu</i>
+      </a>
+    </li>
+    <li class="tab"><a class="active teal-text text-lighten-1" href="#tartu">Tartu</a></li>
+    <li class="tab"><a class="teal-text text-lighten-1" href="#tallinn">Tallinn</a></li>
+  </ul>
+
+  <!-- Seaded -->
+  <ul id="slide-out" class="sidenav">
+    <li><a class="waves-effect" href="/" target="_blank">Korporatsioonid</a></li>
+    <li><a class="waves-effect" href="https://github.com/MarkusTarn/korporatsioonid/issues/new" target="_blank">Ettpanekud ja soovitused</a></li>
+  </ul>
+  
+
+  <!-- Sisu -->
+	<div class="container">
+		<!-- Tartu -->
+		<div id="tartu" class="map"></div>
+		<!-- Tallinn -->
+		<div id="tallinn" class="map"></div>
+	</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW50H4f4OPYDj6zO9-b2fHXW5Ra5-Xe14&callback=initMap" defer></script>
+  <script type="text/javascript" src="data.js"></script>
+  <script>
+		let tartuMap
+		let tallinnMap
+
+    const autorun = () => {
+      /* Initialise material elements */
+      M.AutoInit()
+
+			/* Add map markers */
+			data.forEach(({ name, location }) => {
+				if (location.tartu) addOrgMarker(tartuMap, location.tartu.lat, location.tartu.long, name)
+				if (location.tallinn) addOrgMarker(tallinnMap, location.tallinn.lat, location.tallinn.long, name)
+			})
+    }
+
+		function initMap() {
+			tartuMap = new google.maps.Map(document.getElementById('tartu'), {
+				center: new google.maps.LatLng(58.377930, 26.717139),
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+			})
+			tallinnMap = new google.maps.Map(document.getElementById('tallinn'), {
+				center: new google.maps.LatLng(59.436289, 24.761985),
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+			})
+		}
+
+		function addOrgMarker(map, lat, lng, name) {
+			return new google.maps.Marker({
+				position: { lat: parseFloat(lat), lng: parseFloat(lng) },
+				map,
+				// icon: './cm.png',
+				animation: google.maps.Animation.DROP,
+				description: name,
+				label: name
+			})
+		}
+
+    if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
+    else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun)
+    else window.onload = autorun
+  </script>
+</body>
+
+</html>
