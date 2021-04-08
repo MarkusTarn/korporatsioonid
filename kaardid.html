@@ -9,10 +9,10 @@
   <meta name="author" content="Markus Tarn">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="maps.css">
+  <link rel="stylesheet" href="css/maps.css">
 </head>
 
 <body>
@@ -43,22 +43,25 @@
 	</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW50H4f4OPYDj6zO9-b2fHXW5Ra5-Xe14&callback=initMap" defer></script>
-  <script type="text/javascript" src="data.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-lUIbLwWsdaggAbUT8lFqpswzp_eHOJg&callback=initMap" defer></script>
+  <script type="text/javascript" src="js/data.js"></script>
   <script>
 		let tartuMap
 		let tallinnMap
+		const autorun = () => M.AutoInit()
 
-    const autorun = () => {
-      /* Initialise material elements */
-      M.AutoInit()
-
-			/* Add map markers */
-			data.forEach(({ name, location }) => {
-				if (location.tartu) addOrgMarker(tartuMap, location.tartu.lat, location.tartu.long, name)
-				if (location.tallinn) addOrgMarker(tallinnMap, location.tallinn.lat, location.tallinn.long, name)
-			})
-    }
+		function getMarkerInfo(name, address, url) {
+			return `
+				<div id="content">
+					<div id="siteNotice"></div>
+					<h6 id="firstHeading" class="firstHeading">${name}</h6>
+					<div id="bodyContent">
+						<p><b>${address}</b></p>
+						<a href="${url}">${url}<a/>
+					</div>
+				</div>
+			`
+		}
 
 		function initMap() {
 			tartuMap = new google.maps.Map(document.getElementById('tartu'), {
@@ -71,23 +74,34 @@
 				zoom: 15,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
 			})
-		}
 
-		function addOrgMarker(map, lat, lng, name) {
-			return new google.maps.Marker({
-				position: { lat: parseFloat(lat), lng: parseFloat(lng) },
-				map,
-				// icon: './cm.png',
-				animation: google.maps.Animation.DROP,
-				description: name,
-				label: name
+			/* Add map markers */
+			data.forEach(({ slug, name, location: { tartu, tallinn }, url }) => {
+				if (tartu) addOrgMarker(tartuMap, tartu, slug, name, url)
+				if (tallinn) addOrgMarker(tallinnMap, tallinn, slug, name, url)
 			})
 		}
 
-    if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
-    else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun)
-    else window.onload = autorun
-  </script>
+		function addOrgMarker(map, { lat, long, address }, slug, name, url) {
+			const marker = new google.maps.Marker({
+				map,
+				animation: google.maps.Animation.DROP,
+				position: { lat: parseFloat(lat), lng: parseFloat(long) },
+				icon: {
+					url: `./icons/${slug}.svg`,
+					scaledSize: new google.maps.Size(40, 40),
+				},
+			})
+			const infowindow = new google.maps.InfoWindow({ content: getMarkerInfo(name, address, url) })
+			marker.addListener('click', () => infowindow.open(map, marker))
+
+			return marker
+		}
+
+		if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
+		else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun)
+		else window.onload = autorun
+  	</script>
 </body>
 
 </html>

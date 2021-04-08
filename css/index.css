@@ -37,9 +37,13 @@
 }
 
 .hat {
-	margin: auto;
 	width: 65%;
-	margin: 40px auto;
+	height: 180px;
+	margin: auto;
+}
+
+.org-data {
+	margin-top: 16px;
 }
 
 .top {

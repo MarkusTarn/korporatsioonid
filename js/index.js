@@ -76,13 +76,9 @@ const generateCard = (corpData, tabId) => `
 
 			<div id="${tabId}-${corpData.slug}-content" class="row test">
 				<div class="col s12 m6">
-					<div class="hat">
-						<div class="top ${corpData.palette.top}"></div>
-						<div class="middle ${corpData.palette.middle}"></div>
-						<div class="bottom ${corpData.palette.bottom}"></div>
-					</div>
+					<div class="hat" style="background: url('icons/${corpData.slug}.svg') no-repeat center/65% ;"></div>
 				</div>
-				<div class="col s12 m6">
+				<div class="col s12 m6 org-data">
 					<ul>
 						<li><i class="tiny material-icons">perm_contact_calendar</i> ${new Date(corpData.founded).toLocaleDateString()}</li>
 						<li><i class="tiny material-icons">palette</i> ${corpData.palette.text}</li>
