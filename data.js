@@ -42,7 +42,7 @@ data = [
 		},
 		"member": "indlaensis",
 		"sex": "female",
-		"url": "http://www.cfp.ee/",
+		"url": "https://www.indla.ee",
 		"corp": true
 	},
 	{
