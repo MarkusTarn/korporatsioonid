@@ -335,7 +335,7 @@ data = [
 		"corp": true
 	},
 	{
-		"slug": "Tehnola",
+		"slug": "tehnola",
 		"name": "Tehnola",
 		"founded": "10/23/1921",
 		"palette": {
