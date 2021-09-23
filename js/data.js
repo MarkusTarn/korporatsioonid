@@ -388,7 +388,7 @@ data = [
 	{
 		"slug": "arminia_dorpatensis",
 		"name": "Arminia Dorpatensis",
-		"founded": "11/27/1859",
+		"founded": "05/02/1994",
 		"palette": {
 			"text": "must-valge-vanakuldne",
 			"top": "black",
@@ -456,7 +456,7 @@ data = [
 	{
 		"slug": "pohjala",
 		"name": "EÜS Põhjala",
-		"founded": "11/13/1870",
+		"founded": "11/13/1884",
 		"palette": {
 			"text": "-",
 			"top": "white",
