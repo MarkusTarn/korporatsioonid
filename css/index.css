@@ -1,6 +1,21 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
 .tabs {
-	margin-bottom: 20px;
 	color: #26a69a;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+	display: none;
 }
 
 .tabs-content.carousel .carousel-item {
@@ -21,6 +36,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.container {
+	margin-top: 20px;
 }
 
 .search-bar {
@@ -68,6 +87,11 @@
 
 li i {
 	vertical-align: text-bottom;
+}
+
+.map {
+	height: 100%;
+	width: 100%;
 }
 
 .test {

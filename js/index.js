@@ -2,7 +2,7 @@ const id = (id) => document.getElementById(id)
 const query = (query) => document.querySelector(query)
 const queryAll = (query) => document.querySelectorAll(query)
 
-window.filteredData = data
+window.filteredData = data.sort((a, b) => new Date(a.founded) - new Date(b.founded))
 window.testStack = [...window.filteredData]
 
 window.activeFilters = {
@@ -16,11 +16,11 @@ window.activeFilters = {
 
 const filters = {
   filterCorp: ({ corp }) => !corp,
-  filterSociety: ({ corp }) => corp,
+  filterSociety: ({ corp }) => !!corp,
   filterFemale: ({ sex }) => sex !== 'female',
   filterMale: ({ sex }) => sex !== 'male',
-  filterTartu: ({ tallinn }) => tallinn,
-  filterTallinn: ({ tartu }) => tartu,
+  filterTartu: ({ location: { tallinn } }) => !!tallinn,
+  filterTallinn: ({ location: { tartu } }) => !!tartu,
 }
 
 const filterData = (name, checked) => {
@@ -83,6 +83,8 @@ const generateCard = (corpData, tabId) => `
 						<li><i class="tiny material-icons">perm_contact_calendar</i> ${new Date(corpData.founded).toLocaleDateString()}</li>
 						<li><i class="tiny material-icons">palette</i> ${corpData.palette.text}</li>
 						<li><i class="tiny material-icons">person</i> ${corpData.member}</li>
+						${corpData.location.tartu ? `<li><i class="tiny material-icons">${corpData.location.tartu.icon}</i> ${corpData.location.tartu.address}</li>` : ''}
+						${corpData.location.tallinn ? `<li><i class="tiny material-icons">${corpData.location.tallinn.icon}</i> ${corpData.location.tallinn.address}</li>` : ''}
 						<li><i class="tiny material-icons">flag</i> "${corpData.motto}"</li>
 					</ul>
 				</div>
@@ -112,4 +114,52 @@ const finishSearch = (event, corpData, container) => {
   if (event.type === 'keyup' && event.target.value === '') {
     fillOrgList(corpData, container)
   }
+}
+
+function getMarkerInfo(name, address, url) {
+  return `
+    <div id="content">
+      <div id="siteNotice"></div>
+      <h6 id="firstHeading" class="firstHeading">${name}</h6>
+      <div id="bodyContent">
+        <p><b>${address}</b></p>
+        <a href="${url}">${url}<a/>
+      </div>
+    </div>
+  `
+}
+
+function initMap() {
+  window.tartuMap = new google.maps.Map(document.getElementById('tartu'), {
+    center: new google.maps.LatLng(58.377930, 26.717139),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+  })
+  window.tallinnMap = new google.maps.Map(document.getElementById('tallinn'), {
+    center: new google.maps.LatLng(59.436289, 24.761985),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+  })
+
+  /* Add map markers */
+  window.filteredData.forEach(({ slug, name, location: { tartu, tallinn }, url }) => {
+    if (tartu) addOrgMarker(window.tartuMap, tartu, slug, name, url)
+    if (tallinn) addOrgMarker(window.tallinnMap, tallinn, slug, name, url)
+  })
+}
+
+function addOrgMarker(map, { lat, long, address }, slug, name, url) {
+  const marker = new google.maps.Marker({
+    map,
+    animation: google.maps.Animation.DROP,
+    position: { lat: parseFloat(lat), lng: parseFloat(long) },
+    icon: {
+      url: `./icons/${slug}.svg`,
+      scaledSize: new google.maps.Size(40, 40),
+    },
+  })
+  const infowindow = new google.maps.InfoWindow({ content: getMarkerInfo(name, address, url) })
+  marker.addListener('click', () => infowindow.open(map, marker))
+
+  return marker
 }

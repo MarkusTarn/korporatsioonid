@@ -24,7 +24,9 @@
       </a>
     </li>
     <li class="tab"><a class="active teal-text text-lighten-1" href="#all">Organisatsioonid</a></li>
-    <li class="tab"><a class="teal-text text-lighten-1" href="#test">Test</a></li>
+    <li class="tab"><a class="teal-text text-lighten-1" href="#tartu">Tartu kaart</a></li>
+    <li class="tab"><a class="teal-text text-lighten-1" href="#tallinn">Tallinna kaart</a></li>
+    <li class="tab"><a class="teal-text text-lighten-1" href="#test">Harjutamine</a></li>
   </ul>
 
   <!-- Seaded -->
@@ -37,45 +39,53 @@
     <li><a class="switch"><label class="menu-item"><span>Tartus</span><input name="filterTartu" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
     <li><a class="switch"><label class="menu-item"><span>Tallinnas</span><input name="filterTallinn" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
     <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="/kaardid">Kaardid</a></li>
     <li><a class="waves-effect" href="https://github.com/MarkusTarn/korporatsioonid/issues/new" target="_blank">Ettpanekud ja soovitused</a></li>
   </ul>
   
 
   <!-- Sisu -->
-  <div class="row">
-    <div class="container">
-      <!-- Organisatsioonid -->
-      <div id="all" class="col s12">
-        <!-- Search -->
-        <div class="col s12 m8 l6 offset-m2 offset-l3">
-          <div class="row search-bar">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">search</i>
-              <input type="text" id="autocomplete-all" class="autocomplete">
-              <label for="autocomplete-all">Otsingusõna</label>
-            </div>
-          </div>
-          <div id="org-container" class="row"></div>
-        </div>
-      </div>
 
-      <!-- Test -->
-      <div id="test" class="col s12">
-        <div id="test-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
-        <div class="fixed-action-btn">
-          <a id="next-test" class="btn-floating btn-large waves-effect waves-light tooltipped" data-position="left"
-            data-tooltip="Press enter">
-            <i class="material-icons">arrow_forward_ios</i>
-          </a>
+  <!-- Organisatsioonid -->
+  <div id="all" class="container">
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <!-- Search -->
+        <div class="row search-bar">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">search</i>
+            <input type="text" id="autocomplete-all" class="autocomplete">
+            <label for="autocomplete-all">Otsingusõna</label>
+          </div>
         </div>
+        <!-- List -->
+        <div id="org-container" class="row"></div>
       </div>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Tartu -->
+  <div id="tartu" class="map"></div>
+      
+  <!-- Tallinn -->
+  <div id="tallinn" class="map"></div>
+
+  <!-- Harjutamine -->
+  <div id="test" class="container">
+    <div class="row">
+      <div id="test-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
+      <div class="fixed-action-btn">
+        <a id="next-test" class="btn-floating btn-large waves-effect waves-light tooltipped" data-position="left"
+          data-tooltip="Press enter">
+          <i class="material-icons">arrow_forward_ios</i>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script type="text/javascript" src="js/data.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGSyj4ZZPFhWxNYi793hRNpZOcJ5iSfQI&callback=initMap" defer></script>
   <script>
     const autorun = async () => {
       /* Initialize filters */

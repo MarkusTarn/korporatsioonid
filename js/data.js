@@ -12,9 +12,10 @@ data = [
 		"motto": "Eesti tütar, Eesti kodu tugevasti seotud olgu",
 		"location": {
 			"tartu": {
-				"address": "Wilhelm Struve 4",
+				"address": "Wilhelm Struve 4, Tartu",
 				"lat": "58.377148927506795",
-				"long": "26.72170246377966"
+				"long": "26.72170246377966",
+				"icon": "home"
 			}
 		},
 		"member": "fiilia",
@@ -35,9 +36,10 @@ data = [
 		"motto": "Sõnasse kindlust, teosse ausust, kodule armastust",
 		"location": {
 			"tartu": {
-				"address": "Tartu, Tähtvere 4",
+				"address": "Tähtvere 4, Tartu",
 				"lat": "58.383010279406136",
-				"long": "26.713507568933963"
+				"long": "26.713507568933963",
+				"icon": "home"
 			}
 		},
 		"member": "indlaensis",
@@ -58,9 +60,10 @@ data = [
 		"motto": "Constantia ad finem ducit (Püsivus viib sihile)",
 		"location": {
 			"tallinn": {
-				"address": "Kaarli pst 5-2",
+				"address": "Kaarli pst 5-2, Tallinn",
 				"lat": "59.43214962456414",
-				"long": "24.741793980989513"
+				"long": "24.741793980989513",
+				"icon": "home"
 			}
 		},
 		"member": "lembelensa",
@@ -81,9 +84,10 @@ data = [
 		"motto": "Per aspera ad astra (Läbi raskuste tähtede poole)",
 		"location": {
 			"tartu": {
-				"address": "Kastani 65-2",
+				"address": "Kastani 65-2, Tartu",
 				"lat": "58.372144910528576",
-				"long": "26.713557519003647"
+				"long": "26.713557519003647",
+				"icon": "home"
 			}
 		},
 		"member": "amica",
@@ -104,14 +108,16 @@ data = [
 		"motto": "Teadmised on ilu",
 		"location": {
 			"tartu": {
-				"address": "Lai 30",
+				"address": "Lai 30, Tartu",
 				"lat": "58.38358373751969",
-				"long": "26.719261125632865"
+				"long": "26.719261125632865",
+				"icon": "location_city"
 			},
 			"tallinn": {
-				"address": "Raekojaplats 16",
+				"address": "Raekojaplats 16, Tallinn",
 				"lat": "59.43726830950381",
-				"long": "24.746035478503995"
+				"long": "24.746035478503995",
+				"icon": "home"
 			}
 		},
 		"member": "estonica",
@@ -132,14 +138,16 @@ data = [
 		"motto": "Ühisus, kindlus, ausus!",
 		"location": {
 			"tartu": {
-				"address": "Lai 30",
+				"address": "Lai 30, Tartu",
 				"lat": "58.38358373751969",
-				"long": "26.719261125632865"
+				"long": "26.719261125632865",
+				"icon": "location_city"
 			},
 			"tallinn": {
-				"address": "Uus 28/2-14",
+				"address": "Toompuiestee 16, Tallinn",
 				"lat": "59.4409364311802",
-				"long": "24.749916472224186"
+				"long": "24.749916472224186",
+				"icon": "location_city"
 			}
 		},
 		"member": "vironus",
@@ -158,17 +166,18 @@ data = [
 			"bottom": "white"
 		},
 		"motto": "Teos õiglane ja vahvas, ustav sulle, eesti rahvas",
-		"tartu": "Vanemuise 54",
 		"location": {
 			"tartu": {
-				"address": "Vanemuise 54",
+				"address": "Vanemuise 54, Tartu",
 				"lat": "58.37273513820852",
-				"long": "26.71381857432409"
+				"long": "26.71381857432409",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "Pikk 39",
+				"address": "Pikk 39, Tallinn",
 				"lat": "59.43940490733648",
-				"long": "24.746583852666106"
+				"long": "24.746583852666106",
+				"icon": "location_city"
 			}
 		},
 		"member": "frater esticus",
@@ -189,14 +198,16 @@ data = [
 		"motto": "Üks kõigi eest, kõik ühe eest",
 		"location": {
 			"tartu": {
-				"address": "Veski 69",
+				"address": "Veski 69, Tartu",
 				"lat": "58.376917581492194",
-				"long": "26.71161582546655"
+				"long": "26.71161582546655",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "Roosikrantsi 3",
+				"address": "Roosikrantsi 3, Tallinn",
 				"lat": "59.43236414541949",
-				"long": "24.74364873905055"
+				"long": "24.74364873905055",
+				"icon": "location_city"
 			}
 		},
 		"member": "sakalanus",
@@ -217,9 +228,10 @@ data = [
 		"motto": "Isamaa, sõprus, ausus!",
 		"location": {
 			"tartu": {
-				"address": "Julius Kuperjanovi 16",
+				"address": "Julius Kuperjanovi 16, Tartu",
 				"lat": "58.37636855927431",
-				"long": "26.71384062461321"
+				"long": "26.71384062461321",
+				"icon": "home"
 			}
 		},
 		"member": "ugalensis",
@@ -240,14 +252,16 @@ data = [
 		"motto": "Eestimaa, mu isamaa",
 		"location": {
 			"tartu": {
-				"address": "Tähe 3",
+				"address": "Tähe 3, Tartu",
 				"lat": "58.37311784696499",
-				"long": "26.724994989099716"
+				"long": "26.724994989099716",
+				"icon": "location_city"
 			},
 			"tallinn": {
-				"address": "Pikk 11",
+				"address": "Pikk 11, Tallinn",
 				"lat": "59.43808341124439",
-				"long": "24.744485935158547"
+				"long": "24.744485935158547",
+				"icon": "location_city"
 			}
 		},
 		"member": "rotalus",
@@ -268,14 +282,16 @@ data = [
 		"motto": "Vendlus, ausus, hoolsus!",
 		"location": {
 			"tartu": {
-				"address": "Jakobi 52",
+				"address": "Jakobi 52, Tartu",
 				"lat": "58.38261006019194",
-				"long": "26.712328394030084"
+				"long": "26.712328394030084",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "A. Weizenbergi 10/1-6",
+				"address": "A. Weizenbergi 10/1-6, Tallinn",
 				"lat": "59.438599117257695",
-				"long": "24.781647208386918"
+				"long": "24.781647208386918",
+				"icon": "location_city"
 			}
 		},
 		"member": "frater liviensis",
@@ -296,9 +312,10 @@ data = [
 		"motto": "Truudus, tublidus, ausus",
 		"location": {
 			"tallinn": {
-				"address": "Tatari 12",
+				"address": "Tatari 12, Tallinn",
 				"lat": "59.43057475167708",
-				"long": "24.747196626105573"
+				"long": "24.747196626105573",
+				"icon": "home"
 			}
 		},
 		"member": "leolensis",
@@ -319,14 +336,16 @@ data = [
 		"motto": "Üks kõige – kõik ühe eest",
 		"location": {
 			"tartu": {
-				"address": "Veski 45",
+				"address": "Veski 45, Tartu",
 				"lat": "58.378464246258254",
-				"long": "26.710292352295454"
+				"long": "26.710292352295454",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "Raekojaplats 16",
+				"address": "Raekojaplats 16, Tallinn",
 				"lat": "59.43726830950381",
-				"long": "24.746035478503995"
+				"long": "24.746035478503995",
+				"icon": "location_city"
 			}
 		},
 		"member": "revelus",
@@ -347,9 +366,10 @@ data = [
 		"motto": "Kindlus, ausus, vendlus!",
 		"location": {
 			"tallinn": {
-				"address": "Pikk 29a",
+				"address": "Pikk 29a, Tallinn",
 				"lat": "59.4389315552539",
-				"long": "24.746131758498294"
+				"long": "24.746131758498294",
+				"icon": "home"
 			}
 		},
 		"member": "tehnolus",
@@ -370,14 +390,16 @@ data = [
 		"motto": "Pidevas töös, tõe valguses, elurõõmsalt tulevikku!",
 		"location": {
 			"tartu": {
-				"address": "Jaani 20",
+				"address": "Jaani 20, Tartu",
 				"lat": "58.38310388004305",
-				"long": "26.718563962091125"
+				"long": "26.718563962091125",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "Raekojaplats 16",
+				"address": "Raekojaplats 16, Tallinn",
 				"lat": "59.43726830950381",
-				"long": "24.746035478503995"
+				"long": "24.746035478503995",
+				"icon": "location_city"
 			}
 		},
 		"member": "frater tartuensis",
@@ -398,31 +420,15 @@ data = [
 		"motto": "Deus, Libertas, Patria! (Jumal, vabadus, isamaa!)",
 		"location": {
 			"tartu": {
-				"address": "Õpetaja 11",
+				"address": "Õpetaja 11, Tartu",
 				"lat": "58.374620535491346",
-				"long": "26.71581828007436"
+				"long": "26.71581828007436",
+				"icon": "home"
 			}
 		},
 		"member": "arminus",
 		"sex": "male",
 		"url": "http://www.arminia.ee",
-		"corp": true
-	},
-	{
-		"slug": "fraternitas_arctica",
-		"name": "Fraternitas Arctica",
-		"founded": "11/07/1880",
-		"palette": {
-			"text": "kuldne-hall-punane",
-			"top": "yellow accent-4",
-			"middle": "grey darken-3",
-			"bottom": "red darken-3"
-		},
-		"motto": "P.C.T (Рцы слово твердо)",
-		"location": {},
-		"member": "",
-		"sex": "male",
-		"url": "https://www.arctica.lv",
 		"corp": true
 	},
 	{
@@ -438,14 +444,16 @@ data = [
 		"motto": "Tugevalt asjaajamises, meeldival viisil",
 		"location": {
 			"tartu": {
-				"address": "Jaan Tõnissoni 1",
+				"address": "Jaan Tõnissoni 1, Tartu",
 				"lat": "58.37646700715399",
-				"long": "26.710511986441787"
+				"long": "26.710511986441787",
+				"icon": "home"
 			},
 			"tallinn": {
-				"address": "J. Köleri 13",
+				"address": "J. Köleri 13, Tallinn",
 				"lat": "59.43740879050934",
-				"long": "24.779377118916027"
+				"long": "24.779377118916027",
+				"icon": "location_city"
 			}
 		},
 		"member": "seltsivend",
@@ -466,14 +474,16 @@ data = [
 		"motto": "Töö isamaa kasuks",
 		"location": {
 			"tartu": {
-				"address": "Jakobi 23",
+				"address": "Jakobi 23, Tartu",
 				"lat": "59.42791279657787",
-				"long": "24.770783581087958"
+				"long": "24.770783581087958",
+				"icon": "location_city"
 			},
 			"tallinn": {
-				"address": "Roosikrantsi 8b",
+				"address": "Roosikrantsi 8b, Tallinn",
 				"lat": "59.43096665465064",
-				"long": "24.743331995178796"
+				"long": "24.743331995178796",
+				"icon": "location_city"
 			}
 		},
 		"member": "põhjalane",
@@ -494,9 +504,10 @@ data = [
 		"motto": "Ex solo ad solem soli patriae",
 		"location": {
 			"tartu": {
-				"address": "Karl Ernst von Baeri 7",
+				"address": "Karl Ernst von Baeri 7, Tartu",
 				"lat": "58.38170772568812",
-				"long": "26.712692158143124"
+				"long": "26.712692158143124",
+				"icon": "home"
 			}
 		},
 		"member": "liiviklane",
@@ -517,9 +528,10 @@ data = [
 		"motto": "Demokraatia, rahvuslikkus, individuaalsus",
 		"location": {
 			"tartu": {
-				"address": "Riia 13-33",
+				"address": "Riia 13-33, Tartu",
 				"lat": "58.37376552408489",
-				"long": "26.72131011452072"
+				"long": "26.72131011452072",
+				"icon": "location_city"
 			}
 		},
 		"member": "-",
@@ -540,9 +552,10 @@ data = [
 		"motto": "Õige vaimsuse kaudu vendlusele, nende mõlema kaudu vabadusele!",
 		"location": {
 			"tartu": {
-				"address": "Gildi 3-10",
+				"address": "Gildi 3-10, Tartu",
 				"lat": "58.38151242557774",
-				"long": "26.721341941710666"
+				"long": "26.721341941710666",
+				"icon": "location_city"
 			}
 		},
 		"member": "veljestolane",
@@ -563,9 +576,10 @@ data = [
 		"motto": "Demokraatia, isiksus, isamaa",
 		"location": {
 			"tartu": {
-				"address": "Veski 42",
+				"address": "Veski 42, Tartu",
 				"lat": "58.37689151594549",
-				"long": "26.71257482392983"
+				"long": "26.71257482392983",
+				"icon": "location_city"
 			}
 		},
 		"member": "raimlane",
@@ -586,9 +600,10 @@ data = [
 		"motto": "-",
 		"location": {
 			"tartu": {
-				"address": "Jaani 4",
+				"address": "Jaani 4, Tartu",
 				"lat": "58.3820727587017",
-				"long": "26.719683754933037"
+				"long": "26.719683754933037",
+				"icon": "location_city"
 			}
 		},
 		"member": "fennicus",
