@@ -475,8 +475,8 @@ data = [
 		"location": {
 			"tartu": {
 				"address": "Jakobi 23, Tartu",
-				"lat": "59.42791279657787",
-				"long": "24.770783581087958",
+				"lat": "58.38258654640451",
+				"long": "26.71411579052395",
 				"icon": "location_city"
 			},
 			"tallinn": {
