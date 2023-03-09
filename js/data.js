@@ -144,9 +144,9 @@ data = [
 				"icon": "location_city"
 			},
 			"tallinn": {
-				"address": "Toompuiestee 16, Tallinn",
-				"lat": "59.4409364311802",
-				"long": "24.749916472224186",
+				"address": "Falgi tee 3, Tallinn",
+				"lat": "59.434819",
+				"long": "24.733524",
 				"icon": "location_city"
 			}
 		},
