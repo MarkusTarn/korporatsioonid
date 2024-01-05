@@ -288,9 +288,9 @@ data = [
 				"icon": "home"
 			},
 			"tallinn": {
-				"address": "A. Weizenbergi 10/1-6, Tallinn",
-				"lat": "59.438599117257695",
-				"long": "24.781647208386918",
+				"address": "Uus 16/1-5, Tallinn",
+				"lat": "59.43943575363309",
+				"long": "24.749992467123988",
 				"icon": "location_city"
 			}
 		},
@@ -366,9 +366,9 @@ data = [
 		"motto": "Kindlus, ausus, vendlus!",
 		"location": {
 			"tallinn": {
-				"address": "Pikk 29a, Tallinn",
-				"lat": "59.4389315552539",
-				"long": "24.746131758498294",
+				"address": "Uus 28/2-14",
+				"lat": "59.44094887547851",
+				"long": "24.749975315558213",
 				"icon": "home"
 			}
 		},
