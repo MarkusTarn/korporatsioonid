@@ -1,3 +1,8 @@
+:root {
+	--primary-color: #7e57c2; /* deep-purple lighten-1 */
+	--secondary-color: #5c6bc0; /*  indigo lighten-1 */
+}
+
 html {
 	height: 100%;
 }
@@ -9,7 +14,6 @@ body {
 }
 
 .tabs {
-	color: #26a69a;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
@@ -22,12 +26,21 @@ body {
 	height: auto !important;
 }
 
-.tab {
-	color: #26a69a;
+.tabs .indicator {
+	background-color: var(--primary-color) !important;
+}
+
+.tab a:hover {
+	background-color: rgba(103, 58, 183, 0.1) !important; /* deep-purple with opacity */
+	color: var(--secondary-color) !important;
+}
+
+.tab a.active {
+	background-color: rgba(103, 58, 183, 0.1) !important; /* deep-purple with more opacity */
+	color: var(--secondary-color) !important;
 }
 
 .menu-button {
-  color: rgba(238,110,115,0.7);
   cursor: pointer;
   padding-top: 14px;
 }
@@ -38,6 +51,15 @@ body {
   align-items: center;
 }
 
+/* Switch color customization */
+input[type=checkbox]:checked + .lever {
+	background-color: rgba(103, 58, 183, 0.5) !important; /* deep-purple with opacity */
+}
+
+input[type=checkbox]:checked + .lever:after {
+	background-color: var(--primary-color) !important; /* deep-purple */
+}
+
 .container {
 	margin-top: 20px;
 }
@@ -46,13 +68,27 @@ body {
 	margin: 0 30px 0 10px;
 }
 
+/* Autocomplete colors */
+.input-field .prefix.active {
+	color: var(--secondary-color) !important;
+}
+
+input:focus {
+	border-bottom: 1px solid var(--secondary-color) !important;
+	box-shadow: 0 1px 0 0 var(--secondary-color) !important;
+}
+
+input:focus + label {
+	color: var(--secondary-color) !important;
+}
+
 .card-title a {
 	margin-left: 20px;
 	color: black;
 }
 
 .card-title i {
-	color: #26a69a;
+	color: var(--primary-color);
 }
 
 .hat {
