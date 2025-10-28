@@ -95,6 +95,10 @@ input:focus + label {
 	background-color: rgba(92, 107, 192, 0.1) !important;
 }
 
+.card {
+	border-radius: 8px;
+}
+
 .card-title a {
 	margin-left: 20px;
 	color: black;

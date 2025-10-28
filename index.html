@@ -149,6 +149,35 @@
           document.querySelector(`#next-${activeTab.slice(1)} > i`).click()
         }
       }
+
+      /* Add swipe functionality for mobile */
+      const addSwipeListeners = (containerId, nextCallback) => {
+        const container = id(containerId)
+        let touchStartX = 0
+        let touchEndX = 0
+        
+        container.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX
+        }, false)
+        
+        container.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX
+          handleSwipe()
+        }, false)
+        
+        const handleSwipe = () => {
+          const swipeThreshold = 50 // minimum distance for swipe
+          // Swiped left - go to next card
+          if (touchStartX - touchEndX > swipeThreshold) {
+            nextCallback()
+          }
+          // Optionally handle right swipe (touchEndX - touchStartX > swipeThreshold)
+          // Currently can't go back to previous card
+        }
+      }
+      
+      addSwipeListeners('test-container', nextTest)
+      addSwipeListeners('practice-container', nextPractice)
     }
 
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
