@@ -2,6 +2,8 @@ const id = (id) => document.getElementById(id)
 const query = (query) => document.querySelector(query)
 const queryAll = (query) => document.querySelectorAll(query)
 
+/** Filters */
+
 window.filteredData = data.sort((a, b) => new Date(a.founded) - new Date(b.founded))
 window.testStack = [...window.filteredData]
 
@@ -37,13 +39,7 @@ const filterData = (name, checked) => {
   window.testStack = [...window.filteredData]
 }
 
-const toggleVisible = (event) => {
-  const [tabId, name] = event.target.parentElement.id.split('-')
-  const content = id(`${tabId}-${name}-content`)
-  if (content.classList.contains('hide')) content.classList.remove('hide')
-  else content.classList.add('hide')
-  event.target.innerHTML = event.target.innerHTML === 'visibility' ? 'visibility_off' : 'visibility'
-}
+/** Org list */
 
 const mapSearchData = (corpData) => {
   const searchData = { tühista: null, " ": 'https://placehold.it/250x250' }
@@ -65,46 +61,6 @@ const filterSearchData = (corpData, filter) => corpData.filter((corp) => {
     || corp.url.toLowerCase() === filter
 })
 
-const generateCard = (corpData, tabId) => `
-	<div class="card">
-		<div class="card-content">
-			<span class="card-title">
-				${tabId === 'test' ? '<a id="' + tabId + '-' + corpData.slug + '-toggle" class="right waves-effect waves-circle waves-light tooltipped" href="#" data-position="left" data-tooltip="Press spacebar"><i class="small material-icons">visibility</i></a>' : ''}
-				${tabId === 'test' ? '' : '<a class="right" href="' + corpData.url + '" target="_blank"><i class="small material-icons">public</i></a>'}
-				${corpData.name}
-			</span>
-
-			<div id="${tabId}-${corpData.slug}-content" class="row test">
-				<div class="col s12 m6">
-					<div class="hat" style="background: url('icons/${corpData.slug}.svg') no-repeat center/65% ;"></div>
-				</div>
-				<div class="col s12 m6 org-data">
-					<ul>
-						<li><i class="tiny material-icons">perm_contact_calendar</i> ${new Date(corpData.founded).toLocaleDateString()}</li>
-						<li><i class="tiny material-icons">palette</i> ${corpData.palette.text}</li>
-						<li><i class="tiny material-icons">person</i> ${corpData.member}</li>
-						${corpData.location.tartu ? `<li><i class="tiny material-icons">${corpData.location.tartu.icon}</i> ${corpData.location.tartu.address}</li>` : ''}
-						${corpData.location.tallinn ? `<li><i class="tiny material-icons">${corpData.location.tallinn.icon}</i> ${corpData.location.tallinn.address}</li>` : ''}
-						<li><i class="tiny material-icons">flag</i> "${corpData.motto}"</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-`
-
-const nextTest = () => {
-  getRandomCard(window.testStack)
-  if (window.testStack.length === 0) window.testStack = [...window.filteredData]
-}
-
-const getRandomCard = (corpList) => {
-  const [randomCorp] = corpList.splice(Math.floor(Math.random() * corpList.length), 1)
-  id('test-container').innerHTML = generateCard(randomCorp, 'test')
-  id(`test-${randomCorp.slug}-content`).classList.add('hide')
-  id(`test-${randomCorp.slug}-toggle`).onclick = (e) => toggleVisible(e)
-}
-
 const fillOrgList = (corps, tabId) => {
   id(tabId).innerHTML = ''
   corps.forEach(corp => id(tabId).innerHTML += generateCard(corp, tabId))
@@ -115,6 +71,109 @@ const finishSearch = (event, corpData, container) => {
     fillOrgList(corpData, container)
   }
 }
+
+/** Practice and test */
+
+const toggleVisible = (event) => {
+  const [tabId, name] = event.target.parentElement.id.split('-')
+  const content = id(`${tabId}-${name}-content`)
+  if (content.classList.contains('hide')) content.classList.remove('hide')
+  else content.classList.add('hide')
+  event.target.innerHTML = event.target.innerHTML === 'visibility' ? 'visibility_off' : 'visibility'
+}
+
+const generateCard = (corpData, tabId, testQuestion, testAnswer) => `
+	<div class="card">
+		<div class="card-content">
+			<span class="card-title">
+				${['test', 'practice'].includes(tabId) ?
+          `<a id="${tabId}-${corpData.slug}-toggle" class="right tooltipped" href="#" data-position="left" data-tooltip="Press spacebar"><i class="small material-icons">visibility</i></a>` :
+          `<a class="right" href="${corpData.url}" target="_blank"><i class="small material-icons">public</i></a>`}
+				${tabId === 'test' ? `${corpData.name}, ${testQuestion}?` : corpData.name}
+			</span>
+
+			${tabId !== 'test' ? `
+        <div id="${tabId}-${corpData.slug}-content" class="row practice">
+          <div class="col s12 m6">
+            <div class="hat" style="background: url('icons/${corpData.slug}.svg') no-repeat center/65% ;"></div>
+          </div>
+          <div class="col s12 m6 org-data">
+            <ul>
+              <li><i class="tiny material-icons">perm_contact_calendar</i> ${new Date(corpData.founded).toLocaleDateString()}</li>
+              <li><i class="tiny material-icons">palette</i> ${corpData.palette.text}</li>
+              <li><i class="tiny material-icons">person</i> ${corpData.member}</li>
+              ${corpData.location.tartu ? `<li><i class="tiny material-icons">${corpData.location.tartu.icon}</i> ${corpData.location.tartu.address}</li>` : ''}
+              ${corpData.location.tallinn ? `<li><i class="tiny material-icons">${corpData.location.tallinn.icon}</i> ${corpData.location.tallinn.address}</li>` : ''}
+              <li><i class="tiny material-icons">flag</i> "${corpData.motto}"</li>
+            </ul>
+          </div>
+        </div>
+      ` : ''}
+
+      ${tabId === 'test' ? `
+        <div id="test-${corpData.slug}-content" class="row test">
+          <span class="card-answer">
+            ${testAnswer}
+          </span>
+        </div>
+      ` : ''}
+		</div>
+	</div>
+`
+
+const attributeMap = {
+  'asutatud': 'founded',
+  'värvid': 'palette.text',
+  'liige': 'member',
+  'asukoht tallinnas': 'location.tallinn.address',
+  'asukoht tartus': 'location.tartu.address',
+  'lipukiri': 'motto',
+}
+const orgAttributes = Object.keys(attributeMap)
+
+const getNestedValue = (obj, path) => {
+  return path.split('.').reduce((current, prop) => current?.[prop], obj)
+}
+
+const nextPractice = () => {
+  getRandomCard(window.testStack)
+  if (window.testStack.length === 0) window.testStack = [...window.filteredData]
+}
+
+const getRandomCard = (corpList) => {
+  // Select random corp and remove from list
+  const [randomCorp] = corpList.splice(Math.floor(Math.random() * corpList.length), 1)
+  id('practice-container').innerHTML = generateCard(randomCorp, 'practice')
+  
+  // Hide answer content and set up toggle
+  id(`practice-${randomCorp.slug}-content`).classList.add('hide')
+  id(`practice-${randomCorp.slug}-toggle`).onclick = (e) => toggleVisible(e)
+}
+
+const nextTest = () => {
+  getRandomTestCard(window.testStack)
+  if (window.testStack.length === 0) window.testStack = [...window.filteredData]
+}
+
+const getRandomTestCard = (corpList) => {
+  // Select random corp and remove from list
+  const [randomCorp] = corpList.splice(Math.floor(Math.random() * corpList.length), 1)
+
+  // Filter attributes to only those that exist for this corp
+  const availableAttributes = orgAttributes.filter(attr => {
+    const value = getNestedValue(randomCorp, attributeMap[attr])
+    return value !== undefined && value !== null
+  })
+  const randomAttribute = availableAttributes[Math.floor(Math.random() * availableAttributes.length)]
+  const testAnswer = getNestedValue(randomCorp, attributeMap[randomAttribute])
+  id('test-container').innerHTML = generateCard(randomCorp, 'test', randomAttribute, testAnswer)
+  
+  // Hide answer content and set up toggle
+  id(`test-${randomCorp.slug}-content`).classList.add('hide')
+  id(`test-${randomCorp.slug}-toggle`).onclick = (e) => toggleVisible(e)
+}
+
+/** Maps */
 
 function getMarkerInfo(name, address, url) {
   return `
