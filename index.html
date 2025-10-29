@@ -150,34 +150,43 @@
         }
       }
 
-      /* Add swipe functionality for mobile */
-      const addSwipeListeners = (containerId, nextCallback) => {
+      /* Add swipe and tap functionality for mobile */
+      const addMobileTouchControls = (containerId, cardContainerId, nextCallback) => {
         const container = id(containerId)
         let touchStartX = 0
-        let touchEndX = 0
+        let touchStartY = 0
+        let touchStartTime = 0
         
         container.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].screenX
-        }, false)
+          touchStartX = e.touches[0].clientX
+          touchStartY = e.touches[0].clientY
+          touchStartTime = Date.now()
+        })
         
         container.addEventListener('touchend', (e) => {
-          touchEndX = e.changedTouches[0].screenX
-          handleSwipe()
-        }, false)
-        
-        const handleSwipe = () => {
-          const swipeThreshold = 50 // minimum distance for swipe
-          // Swiped left - go to next card
-          if (touchStartX - touchEndX > swipeThreshold) {
+          const touchEndX = e.changedTouches[0].clientX
+          const touchEndY = e.changedTouches[0].clientY
+          const touchDuration = Date.now() - touchStartTime
+          const swipeDistanceX = Math.abs(touchStartX - touchEndX)
+          const swipeDistanceY = Math.abs(touchStartY - touchEndY)
+          const swipeThreshold = 50
+          
+          const isTap = touchDuration < 300 && swipeDistanceX < 20 && swipeDistanceY < 20
+          const isSwipe = swipeDistanceX > swipeThreshold && swipeDistanceX > swipeDistanceY
+          
+          if (isTap) {
+            e.preventDefault()
+            const toggleIcon = document.querySelector(`#${cardContainerId} [id$="-toggle"] > i`)
+            if (toggleIcon) toggleIcon.click()
+          } else if (isSwipe) {
+            e.preventDefault()
             nextCallback()
           }
-          // Optionally handle right swipe (touchEndX - touchStartX > swipeThreshold)
-          // Currently can't go back to previous card
-        }
+        })
       }
-      
-      addSwipeListeners('test-container', nextTest)
-      addSwipeListeners('practice-container', nextPractice)
+
+      addMobileTouchControls('test', 'test-container', nextTest)
+      addMobileTouchControls('practice', 'practice-container', nextPractice)
     }
 
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
