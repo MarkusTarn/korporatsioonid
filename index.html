@@ -22,7 +22,9 @@
   <meta name="mobile-web-app-capable" content="yes">
 
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -113,6 +115,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGSyj4ZZPFhWxNYi793hRNpZOcJ5iSfQI&callback=initMap" defer></script>
   <script>
+    const refreshTabsIndicator = () => {
+      const tabs = id('tabs')
+      if (!tabs || !window.M?.Tabs) return
+
+      const instance = M.Tabs.getInstance(tabs)
+      if (instance) instance.updateTabIndicator()
+    }
+
     const autorun = async () => {
       /* Initialize filters */
       queryAll('.menu-item > input[type=checkbox]')
@@ -131,6 +141,7 @@
       
       /* Initialise material elements */
       M.AutoInit()
+      requestAnimationFrame(() => requestAnimationFrame(refreshTabsIndicator))
 
       /* Initialise Seacrch */
       M.Autocomplete.init(query('.autocomplete'), {
@@ -187,6 +198,13 @@
 
       addMobileTouchControls('test', 'test-container', nextTest)
       addMobileTouchControls('practice', 'practice-container', nextPractice)
+
+      window.addEventListener('load', refreshTabsIndicator, { once: true })
+      window.addEventListener('resize', refreshTabsIndicator)
+
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(refreshTabsIndicator)
+      }
     }
 
     if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
