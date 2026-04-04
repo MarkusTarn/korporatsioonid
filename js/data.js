@@ -60,9 +60,9 @@ data = [
 		"motto": "Constantia ad finem ducit (Püsivus viib sihile)",
 		"location": {
 			"tallinn": {
-				"address": "Kaarli pst 5-2, Tallinn",
-				"lat": "59.43214962456414",
-				"long": "24.741793980989513",
+				"address": "Kohtu tn 10-3, Tallinn",
+				"lat": "59.4375323586105",
+				"long": "24.741504274824134",
 				"icon": "home"
 			}
 		},
