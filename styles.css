@@ -979,7 +979,6 @@ body.no-scroll {
     width: 100%;
     max-width: 480px;
     align-self: center;
-    padding-top: 1rem;
     flex-shrink: 0;
 }
 
