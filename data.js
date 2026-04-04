@@ -20,7 +20,7 @@ data = [
 		},
 		"member": "fiilia",
 		"sex": "female",
-		"url": "http://www.cfp.ee/",
+		"url": "https://www.cfp.ee",
 		"corp": true
 	},
 	{
@@ -68,7 +68,7 @@ data = [
 		},
 		"member": "lembelensa",
 		"sex": "female",
-		"url": "http://www.lembela.ee",
+		"url": "https://lembela.ee",
 		"corp": true
 	},
 	{
@@ -92,7 +92,7 @@ data = [
 		},
 		"member": "amica",
 		"sex": "female",
-		"url": "http://www.amicitia.ee",
+		"url": "https://www.amicitia.ee",
 		"corp": true
 	},
 	{
@@ -122,7 +122,7 @@ data = [
 		},
 		"member": "estonica",
 		"sex": "female",
-		"url": "http://www.sororitasestoniae.ee",
+		"url": "https://sororitasestoniae.ee/",
 		"corp": true
 	},
 	{
@@ -428,7 +428,7 @@ data = [
 		},
 		"member": "arminus",
 		"sex": "male",
-		"url": "http://www.arminia.ee",
+		"url": "https://www.arminia.ee",
 		"corp": true
 	},
 	{
@@ -458,7 +458,7 @@ data = [
 		},
 		"member": "seltsivend",
 		"sex": "male",
-		"url": "http://www.eys.ee",
+		"url": "https://www.eys.ee",
 		"corp": false
 	},
 	{
@@ -468,7 +468,6 @@ data = [
 		"palette": {
 			"text": "-",
 			"top": "white",
-			"middle": "white",
 			"bottom": "black"
 		},
 		"motto": "Töö isamaa kasuks",
@@ -488,7 +487,7 @@ data = [
 		},
 		"member": "põhjalane",
 		"sex": "uni",
-		"url": "http://www.põhjala.ee",
+		"url": "https://pohjala.ee",
 		"corp": false
 	},
 	{
@@ -498,7 +497,6 @@ data = [
 		"palette": {
 			"text": "-",
 			"top": "white",
-			"middle": "white",
 			"bottom": "black"
 		},
 		"motto": "Ex solo ad solem soli patriae",
@@ -522,7 +520,6 @@ data = [
 		"palette": {
 			"text": "-",
 			"top": "white",
-			"middle": "white",
 			"bottom": "black"
 		},
 		"motto": "Demokraatia, rahvuslikkus, individuaalsus",
@@ -546,7 +543,6 @@ data = [
 		"palette": {
 			"text": "-",
 			"top": "white",
-			"middle": "white",
 			"bottom": "black"
 		},
 		"motto": "Õige vaimsuse kaudu vendlusele, nende mõlema kaudu vabadusele!",
@@ -570,7 +566,6 @@ data = [
 		"palette": {
 			"text": "-",
 			"top": "white",
-			"middle": "white",
 			"bottom": "black"
 		},
 		"motto": "Demokraatia, isiksus, isamaa",
@@ -608,7 +603,7 @@ data = [
 		},
 		"member": "fennicus",
 		"sex": "uni",
-		"url": "http://ff.ee",
+		"url": "https://fraternitasfennica.com",
 		"corp": false
 	}
 ]

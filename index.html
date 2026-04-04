@@ -1,216 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ee">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0YMHNS08V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-J0YMHNS08V');
-  </script>
-
-  <meta charset="utf-8">
-  <title>Korporatsioonid</title>
-
-  <meta name="description" content="Korporatsioonide nimekiri">
-  <meta name="author" content="Markus Tarn">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encyclopaedia Corporationum</title>
+    <meta name="description" content="Eesti akadeemilised organisatsioonid">
+    <meta name="author" content="Markus Tarn">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0YMHNS08V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J0YMHNS08V');
+    </script>
 </head>
 
 <body>
-  <!-- Lehed -->
-  <ul id="tabs" class="tabs">
-    <li class="tab disabled">
-      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-        <i class="material-icons menu-button indigo-text text-lighten-1">menu</i>
-      </a>
-    </li>
-    <li class="tab"><a class="active indigo-text text-lighten-1" href="#all">Organisatsioonid</a></li>
-    <li class="tab"><a class="indigo-text text-lighten-1" href="#tartu">Tartu kaart</a></li>
-    <li class="tab"><a class="indigo-text text-lighten-1" href="#tallinn">Tallinna kaart</a></li>
-    <li class="tab"><a class="indigo-text text-lighten-1" href="#practice">Harjutamine</a></li>
-    <li class="tab"><a class="indigo-text text-lighten-1" href="#test">Test</a></li>
-  </ul>
 
-  <!-- Seaded -->
-  <ul id="slide-out" class="sidenav">
-    <li><a id="filtrid-title" class="subheader">Filtrid</a></li>
-    <li><a class="switch"><label class="menu-item"><span>Korporatsioonid</span><input name="filterCorp" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><a class="switch"><label class="menu-item"><span>Üliõpilasseltsid</span><input name="filterSociety" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><a class="switch"><label class="menu-item"><span>Naised</span><input name="filterFemale" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><a class="switch"><label class="menu-item"><span>Mehed</span><input name="filterMale" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><a class="switch"><label class="menu-item"><span>Tartus</span><input name="filterTartu" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><a class="switch"><label class="menu-item"><span>Tallinnas</span><input name="filterTallinn" type="checkbox" checked="checked"><span class="lever"></span></label></a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="https://github.com/MarkusTarn/korporatsioonid/issues/new" target="_blank">Ettpanekud ja soovitused</a></li>
-  </ul>
-  
-
-  <!-- Sisu -->
-
-  <!-- Organisatsioonid -->
-  <div id="all" class="container">
-    <div class="row">
-      <div class="col s12 m8 l6 offset-m2 offset-l3">
-        <!-- Search -->
-        <div class="row search-bar">
-          <div class="input-field col s12">
-            <i class="material-icons prefix indigo-text text-lighten-1">search</i>
-            <input type="text" id="autocomplete-all" class="autocomplete indigo-text text-lighten-1">
-            <label for="autocomplete-all">Otsingusõna</label>
-          </div>
+    <nav class="nav" role="navigation" aria-label="Peamine navigatsioon">
+        <div class="nav__inner">
+            <span class="nav__title">Encyclopaedia Corporationum</span>
+            <ul class="nav__tabs" role="tablist">
+                <li><button class="nav__tab nav__tab--active" role="tab" aria-selected="true"
+                        data-view="list">Nimekiri</button></li>
+                <li><button class="nav__tab" role="tab" aria-selected="false" data-view="map">Kaart</button></li>
+                <li><button class="nav__tab" role="tab" aria-selected="false" data-view="practice">Harjuta</button></li>
+                <li><button class="nav__tab" role="tab" aria-selected="false" data-view="test">Test</button></li>
+            </ul>
         </div>
-        <!-- List -->
-        <div id="org-container" class="row"></div>
-      </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- Tartu -->
-  <div id="tartu" class="map"></div>
-      
-  <!-- Tallinn -->
-  <div id="tallinn" class="map"></div>
+    <main class="main">
 
-  <!-- Harjutamine -->
-  <div id="practice" class="container">
-    <div class="row">
-      <div id="practice-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
-      <div class="fixed-action-btn">
-        <a id="next-practice" class="btn-floating btn-large waves-effect waves-light indigo lighten-1 tooltipped" data-position="left"
-          data-tooltip="Press enter">
-          <i class="material-icons">arrow_forward_ios</i>
-        </a>
-      </div>
-    </div>
-  </div>
+        <!-- List View -->
+        <section class="view view--list view--active" id="view-list" role="tabpanel">
+            <header class="page-header">
+                <div class="page-header__flourish"></div>
+                <h1 class="page-header__title">Eesti akadeemilised organisatsioonid</h1>
+                <div class="page-header__rule"></div>
+            </header>
 
-  <!-- Test -->
-  <div id="test" class="container">
-    <div class="row">
-      <div id="test-container" class="col s12 m8 l6 offset-m2 offset-l3"></div>
-      <div class="fixed-action-btn">
-        <a id="next-test" class="btn-floating btn-large waves-effect waves-light indigo lighten-1 tooltipped" data-position="left"
-          data-tooltip="Press enter">
-          <i class="material-icons">arrow_forward_ios</i>
-        </a>
-      </div>
-    </div>
-  </div>
+            <div class="filters">
+                <div class="filters__search-wrap">
+                    <input type="search" class="filters__search" id="search-input" placeholder="Otsi organisatsiooni..."
+                        aria-label="Otsi organisatsiooni">
+                </div>
+                <div class="filters__buttons" role="group" aria-label="Filtrid">
+                    <div class="filters__row">
+                        <button class="filter-btn filter-btn--active" data-filter="all">K&otilde;ik</button>
+                    </div>
+                    <div class="filters__row">
+                        <button class="filter-btn" data-filter="corp">Korporatsioonid</button>
+                        <button class="filter-btn" data-filter="selts">Seltsid</button>
+                    </div>
+                    <div class="filters__row">
+                        <button class="filter-btn" data-filter="male">Mehed</button>
+                        <button class="filter-btn" data-filter="female">Naised</button>
+                    </div>
+                    <div class="filters__row">
+                        <button class="filter-btn" data-filter="tartu">Tartu</button>
+                        <button class="filter-btn" data-filter="tallinn">Tallinn</button>
+                    </div>
+                </div>
+                <p class="filters__count" id="org-count" aria-live="polite"></p>
+            </div>
 
-  <script type="text/javascript" src="js/data.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGSyj4ZZPFhWxNYi793hRNpZOcJ5iSfQI&callback=initMap" defer></script>
-  <script>
-    const refreshTabsIndicator = () => {
-      const tabs = id('tabs')
-      if (!tabs || !window.M?.Tabs) return
+            <div class="org-list" id="org-list"></div>
 
-      const instance = M.Tabs.getInstance(tabs)
-      if (instance) instance.updateTabIndicator()
-    }
+            <footer class="list-footer">
+                <div class="list-footer__rule"></div>
+                <p class="list-footer__title">Soovitused ja ettepanekud</p>
+                <div class="list-footer__links">
+                    <a class="list-footer__link" href="https://github.com/MarkusTarn/korporatsioonid/issues/new"
+                        target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a class="list-footer__link"
+                        href="mailto:markustarn@gmail.com?subject=Ettepanek%20%E2%80%93%20Encyclopaedia%20Corporationum"
+                        aria-label="E-post">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="M22 4L12 13 2 4" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="list-footer__email">markustarn@gmail.com</p>
+            </footer>
+        </section>
 
-    const autorun = async () => {
-      /* Initialize filters */
-      queryAll('.menu-item > input[type=checkbox]')
-        .forEach(lever => lever.addEventListener('click', ({ target: { name, checked } }) => filterData(name, checked)))
-      id('filtrid-title').innerHTML = `Filtrid ${window.filteredData.length}/${data.length}`
+        <!-- Map View -->
+        <section class="view view--map" id="view-map" role="tabpanel" hidden>
+            <div class="map-header">
+                <div class="map-switcher" role="tablist" aria-label="Linna valik">
+                    <button class="map-switcher__btn map-switcher__btn--active" role="tab" aria-selected="true"
+                        data-city="tartu">Tartu</button>
+                    <button class="map-switcher__btn" role="tab" aria-selected="false"
+                        data-city="tallinn">Tallinn</button>
+                </div>
+            </div>
+            <div class="map-wrap">
+                <div class="map-container" id="map-container">
+                    <p class="map-loading" id="map-loading">Kaart laeb...</p>
+                </div>
+            </div>
+        </section>
 
-      /* Fill orgs */
-      fillOrgList(window.filteredData, 'org-container')
+        <!-- Practice View -->
+        <section class="view view--practice" id="view-practice" role="tabpanel" hidden>
+            <div class="card-view">
+                <div class="filters filters--compact">
+                    <div class="filters__buttons" role="group" aria-label="Filtrid">
+                        <div class="filters__row">
+                            <button class="filter-btn filter-btn--active" data-filter="all">K&otilde;ik</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="corp">Korporatsioonid</button>
+                            <button class="filter-btn" data-filter="selts">Seltsid</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="male">Mehed</button>
+                            <button class="filter-btn" data-filter="female">Naised</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="tartu">Tartu</button>
+                            <button class="filter-btn" data-filter="tallinn">Tallinn</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-view__counter" id="practice-counter"></p>
+                <div class="card-view__area" id="practice-area">
+                    <div class="card-view__card" id="practice-card">
+                        <div class="card-view__front" id="practice-front"></div>
+                        <div class="card-view__back" id="practice-back"></div>
+                    </div>
+                </div>
+                <div class="card-view__controls">
+                    <button class="btn btn--primary" id="practice-reveal">N&auml;ita vastust</button>
+                    <button class="btn btn--secondary" id="practice-next" hidden>J&auml;rgmine</button>
+                </div>
+            </div>
+        </section>
 
-      /* Initialise practice and test tab */
-      nextTest()
-      id('next-test').onclick = nextTest
-      nextPractice()
-      id('next-practice').onclick = nextPractice
-      M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'))
-      
-      /* Initialise material elements */
-      M.AutoInit()
-      requestAnimationFrame(() => requestAnimationFrame(refreshTabsIndicator))
+        <!-- Test View -->
+        <section class="view view--test" id="view-test" role="tabpanel" hidden>
+            <div class="card-view">
+                <div class="filters filters--compact">
+                    <div class="filters__buttons" role="group" aria-label="Filtrid">
+                        <div class="filters__row">
+                            <button class="filter-btn filter-btn--active" data-filter="all">K&otilde;ik</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="corp">Korporatsioonid</button>
+                            <button class="filter-btn" data-filter="selts">Seltsid</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="male">Mehed</button>
+                            <button class="filter-btn" data-filter="female">Naised</button>
+                        </div>
+                        <div class="filters__row">
+                            <button class="filter-btn" data-filter="tartu">Tartu</button>
+                            <button class="filter-btn" data-filter="tallinn">Tallinn</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="card-view__counter" id="test-counter"></p>
+                <div class="card-view__area" id="test-area">
+                    <div class="card-view__card" id="test-card">
+                        <div class="card-view__question" id="test-question"></div>
+                        <div class="card-view__answer" id="test-answer"></div>
+                    </div>
+                </div>
+                <div class="card-view__controls">
+                    <button class="btn btn--primary" id="test-reveal">N&auml;ita vastust</button>
+                    <button class="btn btn--secondary" id="test-next" hidden>J&auml;rgmine</button>
+                </div>
+            </div>
+        </section>
 
-      /* Initialise Seacrch */
-      M.Autocomplete.init(query('.autocomplete'), {
-        data: mapSearchData(data),
-        onAutocomplete: (filter) => fillOrgList(filterSearchData([...window.filteredData], filter), 'org-container')
-      })
-      query('.autocomplete').addEventListener('keyup', (e) => finishSearch(e, [...window.filteredData], 'org-container'))
+    </main>
 
-      /* Listen to space and enter keys for test */
-      document.body.onkeyup = (event) => {
-        const activeTab = document.querySelector('.tabs .tab a.active').getAttribute('href')
-        if (event.keyCode === 32 || event.key === 'VolumeDown') {
-          const toggleIcon = document.querySelector(`${activeTab}-container [id$="-toggle"] > i`).click()
-        }
-        if (event.keyCode === 13 || event.key === 'VolumeUp') {
-          document.querySelector(`#next-${activeTab.slice(1)} > i`).click()
-        }
-      }
-
-      /* Add swipe and tap functionality for mobile */
-      const addMobileTouchControls = (containerId, cardContainerId, nextCallback) => {
-        const container = id(containerId)
-        let touchStartX = 0
-        let touchStartY = 0
-        let touchStartTime = 0
-        
-        container.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX
-          touchStartY = e.touches[0].clientY
-          touchStartTime = Date.now()
-        })
-        
-        container.addEventListener('touchend', (e) => {
-          const touchEndX = e.changedTouches[0].clientX
-          const touchEndY = e.changedTouches[0].clientY
-          const touchDuration = Date.now() - touchStartTime
-          const swipeDistanceX = Math.abs(touchStartX - touchEndX)
-          const swipeDistanceY = Math.abs(touchStartY - touchEndY)
-          const swipeThreshold = 50
-          
-          const isTap = touchDuration < 300 && swipeDistanceX < 20 && swipeDistanceY < 20
-          const isSwipe = swipeDistanceX > swipeThreshold && swipeDistanceX > swipeDistanceY
-          
-          if (isTap) {
-            e.preventDefault()
-            const toggleIcon = document.querySelector(`#${cardContainerId} [id$="-toggle"] > i`)
-            if (toggleIcon) toggleIcon.click()
-          } else if (isSwipe) {
-            e.preventDefault()
-            nextCallback()
-          }
-        })
-      }
-
-      addMobileTouchControls('test', 'test-container', nextTest)
-      addMobileTouchControls('practice', 'practice-container', nextPractice)
-
-      window.addEventListener('load', refreshTabsIndicator, { once: true })
-      window.addEventListener('resize', refreshTabsIndicator)
-
-      if (document.fonts?.ready) {
-        document.fonts.ready.then(refreshTabsIndicator)
-      }
-    }
-
-    if (document.addEventListener) document.addEventListener('DOMContentLoaded', autorun, false)
-    else if (document.attachEvent) document.attachEvent('onreadystatechange', autorun)
-    else window.onload = autorun
-  </script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
