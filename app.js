@@ -99,6 +99,19 @@
         }
     }
 
+    function trackPageView(view) {
+        if (typeof gtag !== 'function') return;
+
+        var pagePath = view === 'list' ? '/' : '/' + view;
+        var pageLocation = location.origin + location.pathname + (view === 'list' ? '' : '#' + VIEW_HASH[view]);
+
+        gtag('event', 'page_view', {
+            page_title: 'Encyclopaedia Corporationum - ' + view,
+            page_path: pagePath,
+            page_location: pageLocation
+        });
+    }
+
     /* ==================================================================
        Utilities
     ================================================================== */
@@ -871,6 +884,7 @@
 
         state.activeView = view;
         track('view_switch', { view: view });
+        trackPageView(view);
 
         if (view === 'practice' || view === 'test') {
             document.body.classList.add('no-scroll');
@@ -1029,6 +1043,8 @@
     var initialHash = location.hash.replace('#', '');
     if (HASH_VIEW[initialHash]) {
         switchToView(HASH_VIEW[initialHash]);
+    } else {
+        trackPageView('list');
     }
 
 })();
