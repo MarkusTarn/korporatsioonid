@@ -9,6 +9,7 @@
        Configuration
     ================================================================== */
     var GOOGLE_MAPS_API_KEY = '';
+    var DEFAULT_MAP_ZOOM = 15;
 
     /* ==================================================================
        Constants
@@ -453,7 +454,7 @@
     function initMap() {
         state.map = new google.maps.Map(document.getElementById('map-container'), {
             center: mapCenter(state.mapCity),
-            zoom: 15,
+            zoom: DEFAULT_MAP_ZOOM,
             mapTypeControl: false,
             streetViewControl: false,
             fullscreenControl: false,
@@ -593,6 +594,7 @@
         });
         if (state.mapReady && state.map) {
             state.map.setCenter(mapCenter(city));
+            state.map.setZoom(DEFAULT_MAP_ZOOM);
             placeMarkers();
         }
     }
