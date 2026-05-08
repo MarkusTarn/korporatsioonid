@@ -476,16 +476,62 @@
         state.markers = [];
     }
 
+    function offsetMarkerPosition(lat, lng, distanceMeters, angleRadians) {
+        var earthRadius = 6378137;
+        var latOffset = (distanceMeters * Math.sin(angleRadians) / earthRadius) * (180 / Math.PI);
+        var lngOffset = (distanceMeters * Math.cos(angleRadians) / earthRadius) * (180 / Math.PI) / Math.cos(lat * Math.PI / 180);
+
+        return {
+            lat: lat + latOffset,
+            lng: lng + lngOffset
+        };
+    }
+
+    function markerDisplayEntries(city) {
+        var groups = {};
+
+        orgs.forEach(function (org) {
+            if (!org.location || !org.location[city]) return;
+
+            var loc = org.location[city];
+            var key = loc.lat + ',' + loc.long;
+            if (!groups[key]) groups[key] = [];
+            groups[key].push({ org: org, loc: loc });
+        });
+
+        return Object.keys(groups).reduce(function (entries, key) {
+            var group = groups[key];
+
+            group.forEach(function (entry, index) {
+                var position = { lat: entry.loc.lat, lng: entry.loc.long };
+
+                if (group.length > 1) {
+                    var angle = (-Math.PI / 2) + (2 * Math.PI * index / group.length);
+                    var radiusMeters = 12;
+                    position = offsetMarkerPosition(entry.loc.lat, entry.loc.long, radiusMeters, angle);
+                }
+
+                entries.push({
+                    org: entry.org,
+                    loc: entry.loc,
+                    position: position
+                });
+            });
+
+            return entries;
+        }, []);
+    }
+
     function placeMarkers() {
         clearMarkers();
         var city = state.mapCity;
 
-        orgs.forEach(function (org) {
-            if (!org.location || !org.location[city]) return;
-            var loc = org.location[city];
+        markerDisplayEntries(city).forEach(function (entry) {
+            var org = entry.org;
+            var loc = entry.loc;
 
             var marker = new google.maps.Marker({
-                position: { lat: loc.lat, lng: loc.long },
+                position: entry.position,
                 map: state.map,
                 title: org.name,
                 icon: {
